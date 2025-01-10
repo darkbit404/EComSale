@@ -1,0 +1,27 @@
+---
+title: "analysis"
+author: "Pratyush Kumar Singh"
+date: "2025-01-10"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+data=read.csv("C:\\Users\\Dell\\Documents\\Projects\\EComSale\\online sale data.csv")
+data
+```
+
+```{r}
+dim(data)
+```
+
+```{r}
+sum(is.na(data))
+```
+
+```{r}
+
+```
+
