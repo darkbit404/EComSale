@@ -8,13 +8,23 @@ output: pdf_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+```{r}
+library(ggplot2)
+```
+
+
 ```{r}
 data=read.csv("C:\\Users\\Dell\\Documents\\Projects\\EComSale\\online sale data.csv")
 data
 ```
 
 ```{r}
-dim(data)
+str(data)
+```
+
+```{r}
+as.Date(data$Date, format="%Y-%m-%d")
 ```
 
 ```{r}
@@ -22,6 +32,19 @@ sum(is.na(data))
 ```
 
 ```{r}
+category_counts<-table(data$Product.Category)
+category_counts
+```
 
+```{r}
+# Convert category_counts to data-frame.
+category_counts_df<-as.data.frame(category_counts)
+colnames(category_counts_df)<-c("Product Category", "Frequency")
+category_counts_df
+```
+
+```{r}
+ggplot(category_counts_df, aes(x="Product Category", y="Frequency")) + 
+  geom_bar(stat = "identity")
 ```
 
